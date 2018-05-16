@@ -1,0 +1,348 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "brownie challenge",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "DescriptionIntent",
+                    "slots": [
+                        {
+                            "name": "feature",
+                            "type": "feature",
+                            "samples": [
+                                "{feature}"
+                            ]
+                        },
+                        {
+                            "name": "product",
+                            "type": "product",
+                            "samples": [
+                                "I want to learn more about {product}",
+                                "{product}"
+                            ]
+                        },
+                        {
+                            "name": "size",
+                            "type": "size"
+                        }
+                    ],
+                    "samples": [
+                        "what {feature} does {product} come in",
+                        "{feature} {product}",
+                        "{product} {feature}",
+                        "{product} has what {feature}",
+                        "What {feature} does the {product} come in"
+                    ]
+                },
+                {
+                    "name": "AgeIntent",
+                    "slots": [],
+                    "samples": [
+                        "When can someone play Super Mario Odyssey",
+                        "What is the minimum age to play Super Mario Odyssey",
+                        "How old should someone be to play Super Mario Odyssey",
+                        "How old should I be to play Super Mario Odyssey",
+                        "Can my child play Super Mario Odyssey",
+                        "Is my child old enough to play Super Mario Odyssey"
+                    ]
+                },
+                {
+                    "name": "ComparisonIntent",
+                    "slots": [
+                        {
+                            "name": "comparison",
+                            "type": "comparison"
+                        },
+                        {
+                            "name": "productOne",
+                            "type": "product",
+                            "samples": [
+                                "{productOne}"
+                            ]
+                        },
+                        {
+                            "name": "productTwo",
+                            "type": "product"
+                        }
+                    ],
+                    "samples": [
+                        "Between {productOne}  and {productTwo} what is {comparison}",
+                        "Between {productOne} and {productTwo} which one is {comparison}",
+                        "What is the {comparison} between {productOne} and {productTwo}"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "feature",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "sizes"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "flavor",
+                                "synonyms": [
+                                    "tastes",
+                                    "flavors"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "color",
+                                "synonyms": [
+                                    "shades",
+                                    "colors"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "product",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "Super Mario Odyssey",
+                                "synonyms": [
+                                    "odyssey",
+                                    "mario",
+                                    "super mario"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "kind bar",
+                                "synonyms": [
+                                    "kind bars"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "echo show",
+                                "synonyms": [
+                                    "alexa show"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "echo dot",
+                                "synonyms": [
+                                    "alexa dot"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "size",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "small"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "big"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "comparison",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "expensive",
+                                "synonyms": [
+                                    "most expensive",
+                                    "more expensive",
+                                    "pricier",
+                                    "costs more"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "smaller",
+                                "synonyms": [
+                                    "tinier"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "bigger",
+                                "synonyms": [
+                                    "larger"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cheaper",
+                                "synonyms": [
+                                    "least expensive",
+                                    "costs less",
+                                    "less expensive",
+                                    "cheapest"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "difference",
+                                "synonyms": [
+                                    "different"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "DescriptionIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "feature",
+                            "type": "feature",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1047427493656.1255517703111"
+                            }
+                        },
+                        {
+                            "name": "product",
+                            "type": "product",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1390991212040.1212660310238"
+                            }
+                        },
+                        {
+                            "name": "size",
+                            "type": "size",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                },
+                {
+                    "name": "ComparisonIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "comparison",
+                            "type": "comparison",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "productOne",
+                            "type": "product",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1355337214213.1170815289553"
+                            }
+                        },
+                        {
+                            "name": "productTwo",
+                            "type": "product",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1355337214213.122033547939"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Intent-TripIntent.IntentSlot-toCity",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What city?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Intent-TripIntent.IntentSlot-toCity",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "was that {toCity}"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1390991212040.1212660310238",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What product do you want to learn about?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1047427493656.1255517703111",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What {feature} would you like to learn about?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1355337214213.1170815289553",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What would like to compare {productTwo} to"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1355337214213.122033547939",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What would like to compare {productOne} to"
+                    }
+                ]
+            }
+        ]
+    }
+}
