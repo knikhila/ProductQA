@@ -187,10 +187,11 @@ def kindbarAnswer(intent, session):
     if 'feature' in intent['slots']:
         if 'value' in intent['slots']['feature']:
             feature = intent['slots']['feature']['value']
+            session_attributes.update(create_attribute("feature", feature))
+            speech_output = "Give this info to Satish, product: " + product + " feature:  " + feature
             if feature == 'calories':
                 if 'value' in intent['slots']['nutrition']:
                     nutrition = intent['slots']['nutrition']['value']
-                    session_attributes.update(create_attribute("feature", feature))
                     session_attributes.update(create_attribute("nutrition", nutrition ))
                     speech_output = "Give this info to Satish, product: " + product + " feature:  " + feature + " nutrition " + nutrition
     return build_response(session_attributes, build_speechlet_response(
