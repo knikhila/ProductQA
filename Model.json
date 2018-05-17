@@ -159,8 +159,10 @@
                             "name": {
                                 "value": "expire",
                                 "synonyms": [
-                                    "expiration date",
-                                    "expireation"
+                                    "expiry date",
+                                    "expiry",
+                                    "expiration",
+                                    "expiration date"
                                 ]
                             }
                         },
