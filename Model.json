@@ -39,6 +39,7 @@
                         }
                     ],
                     "samples": [
+                        "Can the {product} work as a {feature}",
                         "what {feature} does {product} come in",
                         "{feature} {product}",
                         "{product} {feature}",
@@ -82,12 +83,92 @@
                         "Between {productOne} and {productTwo} which one is {comparison}",
                         "What is the {comparison} between {productOne} and {productTwo}"
                     ]
+                },
+                {
+                    "name": "KindBar",
+                    "slots": [
+                        {
+                            "name": "product",
+                            "type": "product"
+                        },
+                        {
+                            "name": "ingredient",
+                            "type": "ingredient"
+                        },
+                        {
+                            "name": "nutrition",
+                            "type": "nutrition"
+                        },
+                        {
+                            "name": "calories",
+                            "type": "feature"
+                        },
+                        {
+                            "name": "feature",
+                            "type": "feature"
+                        }
+                    ],
+                    "samples": [
+                        "what is the {feature} of {product}",
+                        "when will {product} {feature}",
+                        "how much {nutrition} in the {product}",
+                        "how mamy {nutrition} per {product}",
+                        "how many {feature} of {nutrition} does {product} have",
+                        "what is the {ingredient} of {product}",
+                        "does {product} include {ingredient}",
+                        "does {product} have {ingredient}"
+                    ]
+                },
+                {
+                    "name": "SuperlativeIntent",
+                    "slots": [
+                        {
+                            "name": "superlatives",
+                            "type": "superlatives"
+                        },
+                        {
+                            "name": "productFamily",
+                            "type": "productFamily"
+                        }
+                    ],
+                    "samples": [
+                        "{superlatives} {productFamily}",
+                        "What {productFamily} is the {superlatives}",
+                        "What is the {superlatives} {productFamily}"
+                    ]
                 }
             ],
             "types": [
                 {
                     "name": "feature",
                     "values": [
+                        {
+                            "name": {
+                                "value": "baby monitor"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "price",
+                                "synonyms": [
+                                    "expensive"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "expire",
+                                "synonyms": [
+                                    "expiration date",
+                                    "expireation"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "calories"
+                            }
+                        },
                         {
                             "name": {
                                 "value": "sizes"
@@ -130,6 +211,7 @@
                             "name": {
                                 "value": "kind bar",
                                 "synonyms": [
+                                    "bar",
                                     "kind bars"
                                 ]
                             }
@@ -172,11 +254,14 @@
                     "values": [
                         {
                             "name": {
-                                "value": "expensive",
+                                "value": "lighter"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "pricier",
                                 "synonyms": [
-                                    "most expensive",
                                     "more expensive",
-                                    "pricier",
                                     "costs more"
                                 ]
                             }
@@ -201,10 +286,8 @@
                             "name": {
                                 "value": "cheaper",
                                 "synonyms": [
-                                    "least expensive",
                                     "costs less",
-                                    "less expensive",
-                                    "cheapest"
+                                    "less expensive"
                                 ]
                             }
                         },
@@ -213,6 +296,282 @@
                                 "value": "difference",
                                 "synonyms": [
                                     "different"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ingredient",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "gluten-free",
+                                "synonyms": [
+                                    "gluten"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "non-GMO glucose",
+                                "synonyms": [
+                                    "glucose"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Salt"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Natural Flavor"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Palm Kernel Oil",
+                                "synonyms": [
+                                    "oil"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Cocoa Powder"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Sugar"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Soy Lecithin"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Sea Salt",
+                                "synonyms": [
+                                    "Salt"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Unsweetened Chocolate",
+                                "synonyms": [
+                                    "Chocolate"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Rice Flour",
+                                "synonyms": [
+                                    "flour"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Glucose Syrup",
+                                "synonyms": [
+                                    "Syrup"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Honey"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Chicory Root Fiber",
+                                "synonyms": [
+                                    "Fiber"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Dark Chocolate Flavored Coating",
+                                "synonyms": [
+                                    "Chocolate"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Walnuts"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Peanuts"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Almonds"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ingredient"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "nutrition",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "Phosphorus"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Manganese"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Magnesium"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Copper"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Vitamin E"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Iron"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Calcium"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Protein"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sugar"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Fiber"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Carbohydrate",
+                                "synonyms": [
+                                    "carb"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Potassium"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Sodium"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Fat"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "superlatives",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "heaviest"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "lightest"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "largest",
+                                "synonyms": [
+                                    "huge",
+                                    "biggest"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "smallest",
+                                "synonyms": [
+                                    "tiniest"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "costliest",
+                                "synonyms": [
+                                    "least affordable",
+                                    "most money",
+                                    "costs most money",
+                                    "most expensive"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cheapest",
+                                "synonyms": [
+                                    "most affordable",
+                                    "costs least money",
+                                    "least money",
+                                    "least expensive"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "productFamily",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "echo",
+                                "synonyms": [
+                                    "echo speakers",
+                                    "smart speakers",
+                                    "echo family of devices",
+                                    "alexa devices",
+                                    "echo devices"
                                 ]
                             }
                         }
