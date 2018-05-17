@@ -136,6 +136,30 @@
                         "What {productFamily} is the {superlatives}",
                         "What is the {superlatives} {productFamily}"
                     ]
+                                        ]
+                },
+                {
+                    "name": "SuperMario",
+                    "slots": [
+                        {
+                            "name": "gameinfo",
+                            "type": "gameinfo"
+                        },
+                        {
+                            "name": "product",
+                            "type": "product"
+                        }
+                    ],
+                    "samples": [
+                        "is {gameinfo} in {product}",
+                        "{product} {gameinfo}",
+                        "{gameinfo} {product}",
+                        "does {gameinfo} work with {product}",
+                        "does {product} come with {gameinfo}",
+                        "can I use {gameinfo} to play {product}",
+                        "does {product} have {gameinfo}",
+                        "can more then {gameinfo} play {product}",
+                        "how many {gameinfo} can play {product}"
                 }
             ],
             "types": [
@@ -574,6 +598,49 @@
                                     "echo family of devices",
                                     "alexa devices",
                                     "echo devices"
+                                                                    ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "gameinfo",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "download",
+                                "synonyms": [
+                                    "digit download"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sonic"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "wii U",
+                                "synonyms": [
+                                    "wii"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "nintendo switch",
+                                "synonyms": [
+                                    "switch"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "player",
+                                "synonyms": [
+                                    "multiplayer",
+                                    "players"
                                 ]
                             }
                         }
