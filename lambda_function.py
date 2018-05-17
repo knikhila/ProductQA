@@ -68,6 +68,8 @@ def on_intent(intent_request, session):
         return superlativeProduct(intent, session)
     elif intent_name == "KindBar":
         return kindbarAnswer(intent, session)
+    elif intent_name == "SuperMario":
+        return superMarioAnswer(intent, session)
     elif intent_name == "AMAZON.HelpIntent":
         return get_welcome_response()
     elif intent_name == "AMAZON.StopIntent":
@@ -194,6 +196,21 @@ def kindbarAnswer(intent, session):
                     nutrition = intent['slots']['nutrition']['value']
                     session_attributes.update(create_attribute("nutrition", nutrition ))
                     speech_output = "Give this info to Satish, product: " + product + " feature:  " + feature + " nutrition " + nutrition
+    return build_response(session_attributes, build_speechlet_response(
+            card_title, speech_output, reprompt_text, should_end_session))
+
+def superMarioAnswer(intent, session):
+    card_title = intent['name']
+    product = intent['slots']['product']['value']
+    session_attributes = create_attribute("product", product)
+    should_end_session = False
+    speech_output = "Sorry, I cannot help with that"
+    reprompt_text = "Tell me what information you what to know about super Mario odyssey game"
+    if 'gameinfo' in intent['slots']:
+        if 'value' in intent['slots']['gameinfo']:
+            gameinfo = intent['slots']['gameinfo']['value']
+            session_attributes.update(create_attribute("gameinfo", gameinfo ))
+            speech_output = "Give this info to Satish, product: " + product + " gameinfo:  " + gameinfo
     return build_response(session_attributes, build_speechlet_response(
             card_title, speech_output, reprompt_text, should_end_session))
 
