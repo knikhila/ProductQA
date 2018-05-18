@@ -36,10 +36,14 @@
                         {
                             "name": "size",
                             "type": "size"
+                        },
+                        {
+                            "name": "question_type",
+                            "type": "question_type"
                         }
                     ],
                     "samples": [
-                        "Can the {product} work as a {feature}",
+                        "{question_type} the {product} work as a {feature}",
                         "what {feature} does {product} come in",
                         "{feature} {product}",
                         "{product} {feature}",
@@ -132,11 +136,11 @@
                         }
                     ],
                     "samples": [
+                        "What is the {superlatives} between {productFamily}",
                         "{superlatives} {productFamily}",
                         "What {productFamily} is the {superlatives}",
                         "What is the {superlatives} {productFamily}"
                     ]
-                                        ]
                 },
                 {
                     "name": "SuperMario",
@@ -160,6 +164,41 @@
                         "does {product} have {gameinfo}",
                         "can more then {gameinfo} play {product}",
                         "how many {gameinfo} can play {product}"
+                    ]
+                },
+                {
+                    "name": "EchoDotIntent",
+                    "slots": [
+                        {
+                            "name": "Facts",
+                            "type": "Facts"
+                        },
+                        {
+                            "name": "product",
+                            "type": "product"
+                        },
+                        {
+                            "name": "question_type",
+                            "type": "question_type"
+                        },
+                        {
+                            "name": "usage",
+                            "type": "usage"
+                        },
+                        {
+                            "name": "capability",
+                            "type": "capability"
+                        }
+                    ],
+                    "samples": [
+                        "{question_type} {product} {usage} {capability}",
+                        "how {Facts} is {product}",
+                        "Where can I {Facts} {product}",
+                        "Does the {product} come in {Facts}",
+                        "How {Facts} is the {product}",
+                        "what is the {Facts} of {product}",
+                        "What {Facts} does the {product} come in"
+                    ]
                 }
             ],
             "types": [
@@ -223,6 +262,22 @@
                 {
                     "name": "product",
                     "values": [
+                        {
+                            "name": {
+                                "value": "2nd generation dot",
+                                "synonyms": [
+                                    "2nd generation"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "1st generation dot",
+                                "synonyms": [
+                                    "1st generation"
+                                ]
+                            }
+                        },
                         {
                             "name": {
                                 "value": "Super Mario Odyssey",
@@ -537,6 +592,14 @@
                     "values": [
                         {
                             "name": {
+                                "value": "difference",
+                                "synonyms": [
+                                    "changes"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
                                 "value": "heaviest"
                             }
                         },
@@ -591,14 +654,24 @@
                     "values": [
                         {
                             "name": {
+                                "value": "two generations",
+                                "synonyms": [
+                                    "the two generations",
+                                    "two generations of dot"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
                                 "value": "echo",
                                 "synonyms": [
+                                    "echo products",
                                     "echo speakers",
                                     "smart speakers",
                                     "echo family of devices",
                                     "alexa devices",
                                     "echo devices"
-                                                                    ]
+                                ]
                             }
                         }
                     ]
@@ -645,6 +718,209 @@
                             }
                         }
                     ]
+                },
+                {
+                    "name": "Facts",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "length",
+                                "synonyms": [
+                                    "long"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "width",
+                                "synonyms": [
+                                    "wide"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "height",
+                                "synonyms": [
+                                    "tall"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "usageLocations",
+                                "synonyms": [
+                                    "used",
+                                    "use"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "dimension",
+                                "synonyms": [
+                                    "big",
+                                    "size"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "price",
+                                "synonyms": [
+                                    "cost",
+                                    "expensive"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "color",
+                                "synonyms": [
+                                    "shade"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "question_type",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "will"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "can"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "capability",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "send and receive messages"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "receive messages"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "send messages"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "make calls"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "control smart home devices"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "multi-room music"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "play music"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "connect via bluetooth"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "connect to devices"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "set alarm"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "supports skills"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "kitchen assistant"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "smart alarm clock"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "control Amazon Video"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "voice controlled computer"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "read Audiobooks"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "provides information"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "built in speaker"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "voice controlled"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "hands free"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "usage",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "be used as"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "do",
+                                "synonyms": [
+                                    "be able to",
+                                    "perform"
+                                ]
+                            }
+                        }
+                    ]
                 }
             ]
         },
@@ -676,6 +952,13 @@
                         {
                             "name": "size",
                             "type": "size",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "question_type",
+                            "type": "question_type",
                             "confirmationRequired": false,
                             "elicitationRequired": false,
                             "prompts": {}
@@ -711,6 +994,48 @@
                             "prompts": {
                                 "elicitation": "Elicit.Slot.1355337214213.122033547939"
                             }
+                        }
+                    ]
+                },
+                {
+                    "name": "EchoDotIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "Facts",
+                            "type": "Facts",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "product",
+                            "type": "product",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "question_type",
+                            "type": "question_type",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "usage",
+                            "type": "usage",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "capability",
+                            "type": "capability",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
                         }
                     ]
                 }

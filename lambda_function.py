@@ -55,6 +55,7 @@ def on_intent(intent_request, session):
 
     intent = intent_request['intent']
     intent_name = intent_request['intent']['name']
+    print(intent_name)
 
     # Dispatch to your skill's intent handlers
     # TODO: Add cancel intent handling
@@ -70,6 +71,8 @@ def on_intent(intent_request, session):
         return kindbarAnswer(intent, session)
     elif intent_name == "SuperMario":
         return superMarioAnswer(intent, session)
+    elif intent_name == "EchoDotIntent":
+        return echoDotAnswer(intent, session)
     elif intent_name == "AMAZON.HelpIntent":
         return get_welcome_response()
     elif intent_name == "AMAZON.StopIntent":
@@ -258,6 +261,42 @@ def superlativeProduct(intent, session):
     reprompt_text = "I'm not sure what product you want to learn about. " \
                     "You can ask me about the products by saying."\
                     "I want to know the cheapest Echo"
+    return build_response(session_attributes, build_speechlet_response(
+        card_title, speech_output, reprompt_text, should_end_session))
+        
+def echoDotAnswer(intent, session):
+    card_title = intent['name']
+    should_end_session = False
+    speech_output = ""
+    session_attributes = {}
+    if 'Facts' in intent['slots']:
+        if 'value' in intent['slots']['Facts']:
+            Facts = intent['slots']['Facts']['value']
+            session_attributes.update(create_attribute("Facts", Facts))
+            speech_output = "Your Facts is " + Facts
+    if 'product' in intent['slots']:
+        if 'value' in intent['slots']['product']:
+            product = intent['slots']['product']['value']
+            session_attributes.update(create_attribute("product", product))
+            speech_output = speech_output + " and your product is " + product
+    if 'capability' in intent['slots']:
+        if 'value' in intent['slots']['capability']:
+            capability = intent['slots']['capability']['value']
+            session_attributes.update(create_attribute("capability", capability))
+            speech_output = speech_output + " and your capability is " + capability
+    if 'question_type' in intent['slots']:
+        if 'value' in intent['slots']['question_type']:
+            question_type = intent['slots']['question_type']['value']
+            session_attributes.update(create_attribute("question_type", question_type))
+            speech_output = speech_output + " and your question_type is " + question_type
+    if 'usage' in intent['slots']:
+        if 'value' in intent['slots']['usage']:
+            usage = intent['slots']['usage']['value']
+            session_attributes.update(create_attribute("usage", usage))
+            speech_output = speech_output + " and your usage is " + usage
+    reprompt_text = "I'm not sure what you want to learn about. " \
+                    "You can ask me about the products by saying."\
+                    "I want to know the how expensive is the Echo Dot"
     return build_response(session_attributes, build_speechlet_response(
         card_title, speech_output, reprompt_text, should_end_session))
 
